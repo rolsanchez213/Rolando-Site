@@ -1,0 +1,64 @@
+
+/* Import modern font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at top left, #ff7eb3, #ff758c, #42a5f5, #478ed1);
+    background-size: 400% 400%;
+    animation: meshMove 20s ease infinite;
+    color: #fff;
+}
+
+/* Animated mesh background */
+@keyframes meshMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header, footer, .card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+a.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    padding: 0.75rem 1.25rem;
+    border-radius: 999px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+a.button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+svg.icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Smooth section fade-in */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
